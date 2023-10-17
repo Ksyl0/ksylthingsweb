@@ -15,13 +15,10 @@ export class CountdownsComponent implements OnInit, OnDestroy {
       this.countdown = setInterval(() => {
         this.calculateTimeUntil();
       },1000);
-      this.calculateUntilAdriaxisBack();
-      this.countdown2 = setInterval(() =>{
-        this.calculateUntilAdriaxisBack();
-      })
   }
   ngOnDestroy(): void {
       clearInterval(this.countdown);
+      clearInterval(this.countdown2);
   }
 
   calculateTimeUntil(){
@@ -38,6 +35,10 @@ export class CountdownsComponent implements OnInit, OnDestroy {
     const weeks = Math.floor(days / 7);
     days -= weeks * 7
 
+    if(difference < 0){
+      clearInterval(this.countdown);
+    }
+
     this.countdown = {
       months: months,
       weeks: weeks,
@@ -45,25 +46,6 @@ export class CountdownsComponent implements OnInit, OnDestroy {
       hours: hours,
       minutes: minutes,
       seconds: seconds
-    }
-  }
-
-  calculateUntilAdriaxisBack(){
-    const teraz = new Date();
-    const powrotAdr = new Date('2023-10-17T17:40');
-    const difference2 = powrotAdr.getTime() - teraz.getTime();
-
-    let days2 = Math.floor(difference2 / (1000 * 60 * 60 * 24));
-    const hours2 = Math.floor((difference2% (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
-    const minutes2 = Math.floor((difference2 % (1000 * 60 * 60)) / (1000 * 60));
-    const seconds2 = Math.floor((difference2 % (1000 * 60)) / 1000);  
-
-    this.countdown2 = {
-      days: days2,
-      hours: hours2,
-      minutes: minutes2,
-      seconds: seconds2,
-      difference: difference2
     }
   }
 }
