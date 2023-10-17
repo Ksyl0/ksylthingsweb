@@ -45,7 +45,8 @@ export class CountdownsComponent implements OnInit, OnDestroy {
       days: days,
       hours: hours,
       minutes: minutes,
-      seconds: seconds
+      seconds: seconds,
+      difference: difference
     }
   }
 }
