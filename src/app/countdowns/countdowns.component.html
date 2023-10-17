@@ -13,6 +13,9 @@
                 <h1>Pozostały czas do powrotu adriaxisa na stream:</h1>
                 <h2>Miesiące: {{countdown2.months}} Tygodnie: {{countdown2.weeks}} Dni: {{countdown2.days}} Godziny: {{countdown2.hours}} Minuty: {{countdown2.minutes}} Sekundy : {{countdown2.seconds}}</h2>
             </div>
+            <div *ngIf="countdown2.difference < 0">
+                <h1>Adriaxis powinien zacząć streamować już!!!</h1>
+            </div>
         </div>
         <div class="col-2 bg-dark">
 
