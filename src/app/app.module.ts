@@ -6,13 +6,15 @@ import { AppComponent } from './app.component';
 import { PageNotFoundComponent } from './page-not-found/page-not-found.component';
 import { MainComponent } from './main/main.component';
 import { PlanyComponent } from './plany/plany.component';
+import { CountdownsComponent } from './countdowns/countdowns.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     PageNotFoundComponent,
     MainComponent,
-    PlanyComponent
+    PlanyComponent,
+    CountdownsComponent
   ],
   imports: [
     BrowserModule,

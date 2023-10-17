@@ -1,0 +1,21 @@
+<div class="container-flex">
+    <div class="row g-0 justify-content-center">
+        <div class="col-2 bg-dark">
+            
+        </div>
+        <div class="col-8 vstack d-flex align-items-center justify-content-center">
+            <h1>Podstrona w budowie</h1>
+            <h2>Tutaj będą odliczania które odliczają czas do wydarzeń decydujących mą przyszłość</h2>
+            <img src="../../assets/Prayge.webp">
+            <h1>Pozostały czas do egzaminów zawodowych sesja styczeń:</h1>
+            <h2>Miesiące: {{countdown.months}} Tygodnie: {{countdown.weeks}} Dni: {{countdown.days}} Godziny: {{countdown.hours}} Minuty: {{countdown.minutes}} Sekundy : {{countdown.seconds}}</h2>
+            <div *ngIf="countdown2.difference > 0">
+                <h1>Pozostały czas do powrotu adriaxisa na stream:</h1>
+                <h2>Miesiące: {{countdown2.months}} Tygodnie: {{countdown2.weeks}} Dni: {{countdown2.days}} Godziny: {{countdown2.hours}} Minuty: {{countdown2.minutes}} Sekundy : {{countdown2.seconds}}</h2>
+            </div>
+        </div>
+        <div class="col-2 bg-dark">
+
+        </div>
+    </div>
+</div>
