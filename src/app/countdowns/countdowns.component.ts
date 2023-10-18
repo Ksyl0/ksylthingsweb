@@ -8,7 +8,6 @@ import { Component, Input, OnDestroy, OnInit } from '@angular/core';
 export class CountdownsComponent implements OnInit, OnDestroy {
   @Input() targetDate: Date = new Date('2024-01-09T00:00:00');
   countdown: any;
-  countdown2: any;
 
   ngOnInit(): void {
       this.calculateTimeUntil();
@@ -18,7 +17,6 @@ export class CountdownsComponent implements OnInit, OnDestroy {
   }
   ngOnDestroy(): void {
       clearInterval(this.countdown);
-      clearInterval(this.countdown2);
   }
 
   calculateTimeUntil(){
