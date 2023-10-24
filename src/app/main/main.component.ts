@@ -12,7 +12,6 @@ export class MainComponent implements OnInit, OnDestroy{
   lastStream: Date = new Date("2023-07-11T17:00:00")
 
   ngOnInit(): void {
-    console.log(this.timeNeeded);
     this.timeSpent = 0;
     this.countdown = this.calcTimeSinceLastStream(this.lastStream)
     setInterval(()=>{
