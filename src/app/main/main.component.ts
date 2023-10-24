@@ -7,10 +7,12 @@ import { Component, OnDestroy, OnInit } from '@angular/core';
 })
 export class MainComponent implements OnInit, OnDestroy{
   timeSpent: number = 0;
+  timeNeeded: number = this.getRndInteger(19,40)
   countdown: any;
   lastStream: Date = new Date("2023-07-11T17:00:00")
 
   ngOnInit(): void {
+    console.log(this.timeNeeded);
     this.timeSpent = 0;
     this.countdown = this.calcTimeSinceLastStream(this.lastStream)
     setInterval(()=>{
@@ -21,6 +23,10 @@ export class MainComponent implements OnInit, OnDestroy{
 
   ngOnDestroy(): void {
       clearInterval(this.countdown);
+  }
+
+  getRndInteger(min: number, max: number) {
+    return Math.floor(Math.random() * (max - min + 1) ) + min;
   }
 
   calcTimeSinceLastStream(lastStreamDate: Date){
