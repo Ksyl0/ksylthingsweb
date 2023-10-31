@@ -1,11 +1,11 @@
-import { Component, Input, OnDestroy, OnInit } from '@angular/core';
+import { AfterViewInit, Component, Input, OnDestroy, OnInit } from '@angular/core';
 
 @Component({
   selector: 'app-countdowns',
   templateUrl: './countdowns.component.html',
   styleUrls: ['./countdowns.component.css'],
 })
-export class CountdownsComponent implements OnInit, OnDestroy {
+export class CountdownsComponent implements OnInit, OnDestroy, AfterViewInit {
   @Input() targetDate: Date = new Date('2024-01-09T00:00:00');
   countdown: any;
 
@@ -17,6 +17,10 @@ export class CountdownsComponent implements OnInit, OnDestroy {
   }
   ngOnDestroy(): void {
       clearInterval(this.countdown);
+  }
+
+  ngAfterViewInit(): void {
+      this.calculateTimeUntil();
   }
 
   calculateTimeUntil(){
